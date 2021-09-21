@@ -50,7 +50,7 @@ namespace CubeGames.Inputs
 
         public void DeactivateUnitLeftClickController()
         {
-            enabled = true;
+            enabled = false;
         }
 
         public void ResetUnitGroupSelection()

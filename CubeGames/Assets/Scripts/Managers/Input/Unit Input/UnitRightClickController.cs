@@ -54,6 +54,11 @@ namespace CubeGames.Inputs
             OnRightMouseDown();
         }
 
+        public void DeactivateUnitLeftClickController()
+		{
+            enabled = false;
+        }
+
         private void ReadRightClickInput()
         {
             if (Input.GetMouseButton(1))
@@ -65,7 +70,6 @@ namespace CubeGames.Inputs
                 RectEndPosition = Input.mousePosition;
 
                 OnRightMouseUp();
-                enabled = false;
             }
         }
 
