@@ -1592,17 +1592,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1927426469 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3872029494302190078, guid: 2e1d338626e17894597a509d6e7199b7, type: 3}
-  m_PrefabInstance: {fileID: 4675867247938274942}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 927c30e4a2831064c8efc50db7d26638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1994715150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2112,10 +2101,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6434105688944685199, guid: d47fb26698ffb014fb18ca9e2321402e, type: 3}
-      propertyPath: _mainCameraController
-      value: 
-      objectReference: {fileID: 1927426469}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d47fb26698ffb014fb18ca9e2321402e, type: 3}
 --- !u!1001 &6513655535684779684

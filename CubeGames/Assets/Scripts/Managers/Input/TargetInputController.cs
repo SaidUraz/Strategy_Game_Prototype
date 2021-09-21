@@ -1,6 +1,5 @@
 using UnityEngine;
 using CubeGames.Data;
-using Framework.Enum;
 using CubeGames.Event;
 using CubeGames.Target;
 
@@ -21,7 +20,6 @@ namespace CubeGames.Inputs
         private GameObject _targetControllerToMove;
 
         [SerializeField] private CameraRayEventSO _cameraRayEventSO;
-        [SerializeField] private InputStateEventSO _inputStateEventSO;
         [SerializeField] private UnitTargetEventSO _unitTargetEventSO;
         [SerializeField] private UnitTargetPositionChangeEventSO _unitTargetPositionChangeEventSO;
 
@@ -38,7 +36,6 @@ namespace CubeGames.Inputs
         private GameObject TargetControllerGameObject { get => _targetControllerToMove; set => _targetControllerToMove = value; }
 		
 		private CameraRayEventSO CameraRayEventSO { get => _cameraRayEventSO; set => _cameraRayEventSO = value; }
-		private InputStateEventSO InputStateEventSO { get => _inputStateEventSO; set => _inputStateEventSO = value; }
 		private UnitTargetEventSO UnitTargetEventSO { get => _unitTargetEventSO; set => _unitTargetEventSO = value; }
 		private UnitTargetPositionChangeEventSO UnitTargetPositionChangeEventSO { get => _unitTargetPositionChangeEventSO; set => _unitTargetPositionChangeEventSO = value; }
 
@@ -48,7 +45,6 @@ namespace CubeGames.Inputs
 
 		void Awake()
         {
-            SubscribeEvents();
             Initialize();
         }
 
@@ -68,16 +64,6 @@ namespace CubeGames.Inputs
 
             enabled = false;
         }
-
-        public void SubscribeEvents()
-        {
-            
-        }
-
-        public void UnSubscribeEvents()
-        {
-			
-		}
 
         private void DetectLongClick()
 		{

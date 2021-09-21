@@ -1,5 +1,4 @@
 using UnityEngine;
-using Framework.Enum;
 using CubeGames.Data;
 using CubeGames.Event;
 using System.Collections.Generic;
@@ -14,25 +13,24 @@ namespace CubeGames.Inputs
 
         private List<int> _layerList;
 
+        [SerializeField] private SelectedUnitSO _selectedUnitSO;
         [SerializeField] private CameraRayEventSO _cameraRayEventSO;
 
         [SerializeField] private UnitInputController _unitInputController;
-        [SerializeField] private CameraInputController _cameraInputController;
         [SerializeField] private TargetInputController _targetInputController;
 
         #endregion Variables
 
         #region Properties
 
-        
         private RayData RayData { get => _rayData; set => _rayData = value; }
 		
         private List<int> LayerList { get => _layerList; set => _layerList = value; }
         
+		private SelectedUnitSO SelectedUnitSO { get => _selectedUnitSO; set => _selectedUnitSO = value; }
 		private CameraRayEventSO CameraRayEventSO { get => _cameraRayEventSO; set => _cameraRayEventSO = value; }
         
         private UnitInputController UnitInputController { get => _unitInputController; set => _unitInputController = value; }
-        private CameraInputController CameraInputController { get => _cameraInputController; set => _cameraInputController = value; }
 		private TargetInputController TargetInputController { get => _targetInputController; set => _targetInputController = value; }
 
 		#endregion Properties
@@ -41,8 +39,6 @@ namespace CubeGames.Inputs
 
 		void Awake()
         {
-            SubscribeEvents();
-            
             Initialize();
         }
 
@@ -63,18 +59,6 @@ namespace CubeGames.Inputs
 
             UnitInputController.Initialize();
             TargetInputController.Initialize();
-        }
-
-        private void SubscribeEvents()
-        {
-            UnitInputController.SubscribeEvents();
-            TargetInputController.SubscribeEvents();
-        }
-
-        private void UnSubscribeEvents()
-        {
-            UnitInputController.UnSubscribeEvents();
-            TargetInputController.UnSubscribeEvents();
         }
 
         private GameObject GetGameObject(RaycastHit[] raycastHitArray)
@@ -117,7 +101,7 @@ namespace CubeGames.Inputs
                     }
                     else if (hitGameObject.layer == LayerMask.NameToLayer("Ground"))
                     {
-                        UnitInputController.ResetUnitGroupSelection();
+						SelectedUnitSO.ResetList();
                         return;
                     }
                 }

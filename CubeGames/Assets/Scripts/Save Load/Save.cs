@@ -5,24 +5,6 @@ namespace Framework.Data
 {
     public static class Save
     {
-        #region Events
-
-
-
-        #endregion Events
-
-        #region Variables
-
-
-
-        #endregion Variables
-
-        #region Properties
-
-
-
-        #endregion Properties
-
         #region Functions
 
         public static void SaveGame(float coin, int levelText, int lastLevelPlayed, bool didLastLevelReached, string filePath, string fileName)

@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Managers\Input\CameraInputController.cs" />
     <Compile Include="Assets\Scripts\Unit\UnitManager.cs" />
+    <Compile Include="Assets\Scripts\Events\Input\UnitTargetEventSO.cs" />
     <Compile Include="Assets\Scripts\State\BaseState.cs" />
     <Compile Include="Assets\Scripts\Extension\SingletonDestroyable.cs" />
     <Compile Include="Assets\Scripts\Save Load\Load.cs" />
@@ -69,15 +70,17 @@
     <Compile Include="Assets\Scripts\Managers\Camera\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Unit\UnitController.cs" />
     <Compile Include="Assets\Scripts\Extension\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Events\UI-Unit\UIUnitEventSO.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\CanvasManager.cs" />
+    <Compile Include="Assets\Scripts\Events\Unit-Target\UnitTargetPositionChangeEventSO.cs" />
     <Compile Include="Assets\Scripts\Extension\ExtensionHelper.cs" />
     <Compile Include="Assets\Scripts\Managers\Target\TargetManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Save Load\Save.cs" />
     <Compile Include="Assets\Scripts\State\GameState.cs" />
+    <Compile Include="Assets\Scripts\Data\SOs\SelectedUnitSO.cs" />
     <Compile Include="Assets\Scripts\Data\GameData.cs" />
-    <Compile Include="Assets\Scripts\Managers\Input\UnitInputController.cs" />
+    <Compile Include="Assets\Scripts\Managers\Input\Unit Input\UnitInputController.cs" />
     <Compile Include="Assets\Scripts\Managers\Input\TargetInputController.cs" />
     <Compile Include="Assets\Scripts\State\MenuState.cs" />
     <Compile Include="Assets\Scripts\UIs\UIBaseController.cs" />
@@ -86,11 +89,10 @@
     <Compile Include="Assets\Scripts\Events\Camera\CameraRayEventSO.cs" />
     <Compile Include="Assets\Scripts\Extension\ExtensionMethods.cs" />
     <Compile Include="Assets\Scripts\Managers\Target\TargetController.cs" />
-    <Compile Include="Assets\Scripts\Events\Input\InputStateEventSO.cs" />
-    <Compile Include="Assets\Scripts\Data\SOs\SelectedUnitSO.cs" />
-    <Compile Include="Assets\Scripts\Events\Input\UnitTargetEventSO.cs" />
-    <Compile Include="Assets\Scripts\Events\Unit-Target\UnitTargetPositionChangeEventSO.cs" />
-    <Compile Include="Assets\Scripts\Events\UI-Unit\UIUnitEventSO.cs" />
+    <Compile Include="Assets\Scripts\Managers\Input\Unit Input\UnitRightClickController.cs" />
+    <Compile Include="Assets\Scripts\Managers\Input\Unit Input\UnitLeftClickController.cs" />
+    <Compile Include="Assets\Scripts\Events\Camera\CameraPositionConvertionEventSO.cs" />
+    <Compile Include="Assets\Scripts\Data\PositionData.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -16,6 +16,7 @@ namespace CubeGames.Cameras
 
         [SerializeField] private CameraRayEventSO _cameraRayEventSO;
         [SerializeField] private CameraInputEventSO _cameraInputEventSO;
+        [SerializeField] private CameraPositionConvertionEventSO _cameraPositionConvertionEventSO;
 
         #endregion Variables
 
@@ -28,12 +29,13 @@ namespace CubeGames.Cameras
 
         private CameraRayEventSO CameraRayEventSO { get => _cameraRayEventSO; set => _cameraRayEventSO = value; }
         private CameraInputEventSO CameraInputEventSO { get => _cameraInputEventSO; set => _cameraInputEventSO = value; }
+		private CameraPositionConvertionEventSO CameraPositionConvertionEventSO { get => _cameraPositionConvertionEventSO; set => _cameraPositionConvertionEventSO = value; }
 
 		#endregion Properties
 
-        #region Functions
+		#region Functions
 
-        public void Initialize()
+		public void Initialize()
         {
             Rigidbody = GetComponent<Rigidbody>();
         }
@@ -43,6 +45,8 @@ namespace CubeGames.Cameras
             CameraRayEventSO.OnScreenToRayRequested += FillRayData;
             CameraInputEventSO.OnCameraDirectionUpdated += MoveCamera;
             CameraInputEventSO.OnCameraRotationUpdated += RotateCamera;
+            CameraPositionConvertionEventSO.OnScreenToViewportPointRequested += RequestScreenToViewportPoint;
+            CameraPositionConvertionEventSO.OnWorldToViewportPointRequested += RequestWorldToViewportPoint;
         }
 
         public void UnSubscribeEvents()
@@ -50,6 +54,9 @@ namespace CubeGames.Cameras
             CameraRayEventSO.OnScreenToRayRequested -= FillRayData;
             CameraInputEventSO.OnCameraDirectionUpdated -= MoveCamera;
             CameraInputEventSO.OnCameraRotationUpdated -= RotateCamera;
+
+            CameraPositionConvertionEventSO.OnScreenToViewportPointRequested -= RequestScreenToViewportPoint;
+            CameraPositionConvertionEventSO.OnWorldToViewportPointRequested -= RequestWorldToViewportPoint;
         }
 
         private void RotateCamera(Vector3 cameraRotation)
@@ -77,14 +84,14 @@ namespace CubeGames.Cameras
             return MainCamera.WorldToScreenPoint(position);
         }
 
-        public Vector3 GetScreenToViewportPoint(Vector3 position)
+        public void RequestScreenToViewportPoint(PositionData positionData, Vector3 position)
         {
-            return MainCamera.ScreenToViewportPoint(position);
+            positionData.Position = MainCamera.ScreenToViewportPoint(position);
         }
 
-        public Vector3 GetWorldToViewportPoint(Vector3 position)
+        public void RequestWorldToViewportPoint(PositionData positionData, Vector3 position)
         {
-            return MainCamera.WorldToViewportPoint(position);
+            positionData.Position = MainCamera.WorldToViewportPoint(position);
         }
 
         #endregion Functions

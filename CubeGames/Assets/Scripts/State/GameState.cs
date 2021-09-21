@@ -4,24 +4,6 @@ namespace Framework.State
 {
 	public class GameState : BaseState
 	{
-		#region Events
-
-
-
-		#endregion Events
-
-		#region Variables
-
-
-
-		#endregion Variables
-
-		#region Properties
-
-
-
-		#endregion Properties
-
 		#region Functions
 
 		public GameState(StateType stateType)

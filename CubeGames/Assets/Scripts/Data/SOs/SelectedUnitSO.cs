@@ -43,6 +43,14 @@ namespace CubeGames.Data
             OnSelectedCountUpdated?.Invoke(selectedUnitCount);
         }
 
+        public void AddUnit(UnitController unitController)
+        {
+            UnitControllerList.Add(unitController);
+            ChangeUnitColor(unitController, SelectedUnitGreen);
+
+            RaiseOnSelectedCountUpdated(UnitControllerList.Count);
+        }
+
         /// <summary>
         /// If true: adds unitController without resetting the list.
         /// </summary>
@@ -54,14 +62,6 @@ namespace CubeGames.Data
                 ResetList();
             }
 
-            UnitControllerList.Add(unitController);
-            ChangeUnitColor(unitController, SelectedUnitGreen);
-
-            RaiseOnSelectedCountUpdated(UnitControllerList.Count);
-        }
-
-        public void AddUnit(UnitController unitController)
-		{
             UnitControllerList.Add(unitController);
             ChangeUnitColor(unitController, SelectedUnitGreen);
 

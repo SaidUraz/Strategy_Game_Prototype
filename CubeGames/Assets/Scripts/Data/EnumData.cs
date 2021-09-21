@@ -8,14 +8,5 @@ namespace Framework.Enum
 		Game
 	}
 
-	public enum InputStateType
-	{
-		None,
-		UnitLeftClick,
-		UnitRightClick,
-		Ground,
-		Target
-	}
-
 	#endregion Enums
 }

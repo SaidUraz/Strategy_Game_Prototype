@@ -6,11 +6,6 @@ namespace Framework.Manager
 {
     public class StateManager
     {
-        #region Events
-
-
-        #endregion Events
-
         #region Variables
 
         private BaseState _currentState;
@@ -28,21 +23,6 @@ namespace Framework.Manager
 		#endregion Properties
 
 		#region Functions
-
-		public void Initialize()
-        {
-
-        }
-
-        public void SubscribeEvents()
-        {
-
-        }
-
-        public void UnSubscribeEvents()
-        {
-
-        }
 
         public void ChangeState(StateType stateType)
 		{

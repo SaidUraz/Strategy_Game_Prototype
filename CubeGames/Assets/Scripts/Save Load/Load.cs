@@ -5,24 +5,6 @@ namespace Framework.Data
 {
     public static class Load
     {
-        #region Events
-
-
-
-        #endregion Events
-
-        #region Variables
-
-
-
-        #endregion Variables
-
-        #region Properties
-
-
-
-        #endregion Properties
-
         #region Functions
 
         public static GameData LoadGameData(string filePath, string fileName)

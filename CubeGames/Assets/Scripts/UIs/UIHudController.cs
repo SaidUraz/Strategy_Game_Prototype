@@ -6,7 +6,7 @@ using CubeGames.Event;
 
 namespace Framework.UI
 {
-    public class UIHudController : MonoBehaviour
+    public class UIHudController : UIBaseController
     {
 		#region Variables
 
@@ -42,8 +42,10 @@ namespace Framework.UI
 
 		#region Functions
 
-		public void Initialize()
+		public override void Initialize()
         {
+			base.Initialize();
+
 			UnitSpeedInputField.onValueChanged.AddListener(delegate { OnUnitSpeedInputFieldOnEndEdit(); });
 			UnitStoppingDistanceInputField.onValueChanged.AddListener(delegate { OnUnitStoppingDistanceInputFieldOnEndEdit(); });
 

@@ -7,8 +7,6 @@ namespace CubeGames.Inputs
     {
         #region Variables
 
-        private const float DEGREE_TO_RADIAN = Mathf.PI / 180f;
-
         private float _zoomInOut;
         
         private float _horizontalDirection;

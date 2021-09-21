@@ -98,6 +98,7 @@ MonoBehaviour:
   _mainCamera: {fileID: 4675867247017175821}
   _cameraRayEventSO: {fileID: 11400000, guid: f7ef53c551057df469ff4ec034ef2bac, type: 2}
   _cameraInputEventSO: {fileID: 11400000, guid: 4beebcb2430552d48b239d03c753a5e1, type: 2}
+  _cameraPositionConvertionEventSO: {fileID: 11400000, guid: f66d781ed033c6b4e81baae512db4c7a, type: 2}
 --- !u!54 &7557826857479750922
 Rigidbody:
   m_ObjectHideFlags: 0

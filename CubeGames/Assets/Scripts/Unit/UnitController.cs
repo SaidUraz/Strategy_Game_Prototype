@@ -131,6 +131,7 @@ namespace CubeGames.Unit
         private void RemoveUnitTarget()
 		{
             TargetController = null;
+            NavMeshAgent.ResetPath();
 		}
 
         #endregion Functions

@@ -20,7 +20,6 @@ namespace Framework.UI
 		
         protected virtual void OnEnable()
 		{
-            //CanvasGroup.DOFade(1f, 0.5f);
             CanvasGroup.alpha = 1f;
 		}
         
