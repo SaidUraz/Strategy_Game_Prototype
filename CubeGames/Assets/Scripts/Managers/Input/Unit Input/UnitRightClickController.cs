@@ -15,7 +15,7 @@ namespace CubeGames.Inputs
         private Vector3 _rectCurrentPosition;
 
         [SerializeField] private SelectedUnitSO _selectedUnitSO;
-        [SerializeField] private CameraRayEventSO _cameraRayEventSO;
+        [SerializeField] private RightClickGuideEventSO _rightClickGuideEventSO;
         [SerializeField] private CameraPositionConvertionEventSO _cameraPositionConvertionEventSO;
 
         #endregion Variables
@@ -27,7 +27,7 @@ namespace CubeGames.Inputs
         private Vector3 RectCurrentPosition { get => _rectCurrentPosition; set => _rectCurrentPosition = value; }
 
         private SelectedUnitSO SelectedUnitSO { get => _selectedUnitSO; set => _selectedUnitSO = value; }
-        private CameraRayEventSO CameraRayEventSO { get => _cameraRayEventSO; set => _cameraRayEventSO = value; }
+		private RightClickGuideEventSO RightClickGuideEventSO { get => _rightClickGuideEventSO; set => _rightClickGuideEventSO = value; }
 		private CameraPositionConvertionEventSO CameraPositionConvertionEventSO { get => _cameraPositionConvertionEventSO; set => _cameraPositionConvertionEventSO = value; }
 
 		#endregion Properties
@@ -67,8 +67,6 @@ namespace CubeGames.Inputs
             }
             else if (Input.GetMouseButtonUp(1))
             {
-                RectEndPosition = Input.mousePosition;
-
                 OnRightMouseUp();
             }
         }
@@ -76,15 +74,21 @@ namespace CubeGames.Inputs
         private void OnRightMouseDown()
         {
             RectStartPosition = Input.mousePosition;
+
+            RightClickGuideEventSO.RaiseOnRightClickDown();
         }
 
         private void OnRightMouse()
         {
-            RectCurrentPosition = Input.mousePosition;
+            RectEndPosition = Input.mousePosition;
+
+            RightClickGuideEventSO.RaiseOnRightClickHold(RectStartPosition, RectEndPosition);
         }
 
         private void OnRightMouseUp()
         {
+            RectEndPosition = Input.mousePosition;
+
             PositionData positionData = new PositionData();
 
             CameraPositionConvertionEventSO.RaiseOnScreenToViewportPointRequested(positionData, RectStartPosition);
@@ -98,6 +102,8 @@ namespace CubeGames.Inputs
             List<UnitController> unitControllerList = SelectedUnitSO.RaiseOnAllUnitControllerRequested();
 
             AddSelectedGroupOfUnits(unitControllerList, rect);
+
+            RightClickGuideEventSO.RaiseOnRightClickUp();
         }
 
         private void AddSelectedGroupOfUnits(List<UnitController> unitControllerList, Rect rect)

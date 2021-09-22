@@ -2053,6 +2053,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5252472437382456809, guid: d47fb26698ffb014fb18ca9e2321402e, type: 3}
+      propertyPath: _rightClickGuideEventSO
+      value: 
+      objectReference: {fileID: 11400000, guid: bf2aeac4467dc7443a29a25f7c6db579, type: 2}
     - target: {fileID: 6434105687953064872, guid: d47fb26698ffb014fb18ca9e2321402e, type: 3}
       propertyPath: m_Name
       value: Input Manager

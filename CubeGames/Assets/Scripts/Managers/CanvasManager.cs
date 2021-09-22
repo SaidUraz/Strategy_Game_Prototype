@@ -1,5 +1,6 @@
 using UnityEngine;
 using Framework.UI;
+using CubeGames.UI;
 
 namespace Framework.Managers
 {
@@ -8,12 +9,14 @@ namespace Framework.Managers
         #region Variables
 
         [SerializeField] private UIHudController _uIHudController;
+        [SerializeField] private UIRightClickGuideController _uIRightClickGuideController;
 
 		#endregion Variables
 
 		#region Properties
 
 		private UIHudController UIHudController { get => _uIHudController; set => _uIHudController = value; }
+		private UIRightClickGuideController UIRightClickGuideController { get => _uIRightClickGuideController; set => _uIRightClickGuideController = value; }
 
 		#endregion Properties
 
@@ -31,8 +34,10 @@ namespace Framework.Managers
 		public void Initialize()
         {
 			UIHudController.SubscribeEvents();
+			UIRightClickGuideController.SubscribeEvents();
 
 			UIHudController.Initialize();
+			UIRightClickGuideController.Initialize();
 		}
 
         #endregion Functions
